@@ -12,7 +12,7 @@ public class CountController  {
     private static final String fileName = "/Users/shrish/file"; 
     @RequestMapping("/count")
     public @ResponseBody Count count(
-            @RequestParam(value="query", required=false, defaultValue="World") String query) throws IOException {
+            @RequestParam(value="query", required=false, defaultValue="") String query) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         
         String line = null; 
