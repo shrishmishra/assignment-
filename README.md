@@ -6,4 +6,6 @@ http://localhost:8080/count?query=shrish
 
 Count is a REST API , you can find application code in src/main/java/hello/CountController.java 
 
+I have used this tutorial for spring https://spring.io/guides/gs/rest-service/ 
+
 
