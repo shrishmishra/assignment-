@@ -13,21 +13,7 @@ public class CountController  {
     @RequestMapping("/count")
     public @ResponseBody Count count(
             @RequestParam(value="query", required=false, defaultValue="") String query) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(fileName));
         
-        String line = null; 
-        String result = "";
-        int count = 0;
-        if(!query.equals("")) {
-            while ((line = reader.readLine()) != null) {
-                String [] words = line.split(",");
-            
-                for(String word : words) {
-                    if(word.equalsIgnoreCase(query))
-                        ++count;
-                }
-            }
-        }
-        return new Count( String.valueOf(count) );
+            return WordCountUtil.getInstance().count(query.toLowerCase());
     }
 }
